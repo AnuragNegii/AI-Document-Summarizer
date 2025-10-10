@@ -21,7 +21,13 @@ def main():
             prompt,
         ],
     )
-    print(response.text)
+    text = response.text
+    createFile(text)
+
+
+def createFile(text):
+    with open("output.txt", "w") as file:
+        file.write(text)
 
 
 main()
